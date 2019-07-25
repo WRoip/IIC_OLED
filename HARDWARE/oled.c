@@ -24,7 +24,7 @@ void Led_Init()
 	Out_Oled(0xD5,MOC_Commend);//设置显示时钟分频值/震荡频率
 	Out_Oled(0x80,MOC_Commend);//
 	
-	Out_Oled(0xD8,MOC_Commend);//set area color mode off
+	Out_Oled(0xD8,MOC_Commend);//设置区域颜色模式(set area color mode off)
 	Out_Oled(0x05,MOC_Commend);//
 	
 	Out_Oled(0xD9,MOC_Commend);//设置预充电周期
@@ -36,7 +36,7 @@ void Led_Init()
 	Out_Oled(0xDB,MOC_Commend);//设置VCOMH反压值(Set VCOMH Deselect Level)(DBh)
 	Out_Oled(0x30,MOC_Commend);//
 	
-	Out_Oled(0x8D,MOC_Commend);//set charge pump enable
+	Out_Oled(0x8D,MOC_Commend);//电荷泵设置启用（set charge pump enable）(8Dh)
 	Out_Oled(0x14,MOC_Commend);//
 	
 	Out_Oled(0x26,MOC_Commend); //水平滚动设置
@@ -48,9 +48,15 @@ void Led_Init()
 	Out_Oled(0xff,MOC_Commend);
 	
 	//Out_Oled(0x2F,MOC_Commend);//激活滚动
-	//Out_Oled(0x2E,MOC_Commend);//关闭滚动
+	Out_Oled(0x2E,MOC_Commend);//关闭滚动
 	
-	Out_Oled(0xAF,MOC_Commend);//--turn on oled panel
+	//Out_Oled(0xD6,MOC_Commend); //放大
+	//Out_Oled(0x00,MOC_Commend); 
+	
+	Out_Oled(0xD6,MOC_Commend); //放大禁止
+	Out_Oled(0x00,MOC_Commend); 
+	
+	Out_Oled(0xAF,MOC_Commend);//打开显示(turn on oled panel)(AFh)
 	
 }
 									

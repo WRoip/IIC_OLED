@@ -18,7 +18,7 @@ int main(void)
 /****************** 实现的功能 ********************/
 	
 /****************** 测试用例 **************************/
-#if 1
+#if 0
 	
 	/*
 	*		用例号: test1
@@ -38,18 +38,21 @@ int main(void)
 	
 	/*
 	*		用例号: test2
-	*	用例说明: 屏幕显示543210倒计时
+	*	用例说明: 屏幕显示5-4-3-2-1-0倒计时
 	*	测试结果: true
 	*/
-	Out_Oled(0x2E,MOC_Commend);//关闭滚动
+	Out_Oled(0xD6,MOC_Commend); //放大
+	Out_Oled(0x01,MOC_Commend); 
+	
 	for(ret = 0; ret <= 6; ret++){
 		ret %= 6;
-		Show_Zh( 48, 2, Chinese_Num, ret);
+		Show_Zh( 48, 1, Chinese_Num, ret);
 		delay_ms(500);
 		OLED_Clear();
 		delay_ms(500);
 		
 	}
+	
 #endif
 	
 
